@@ -15,7 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let viewController = ViewController() //table = [[NGPTableViewController alloc] initWithStyle:UITableViewStylePlain];
+        let navigationVC = UINavigationController(rootViewController:viewController)
+        if let appWindow = self.window{
+            appWindow.rootViewController = navigationVC
+            appWindow.backgroundColor = UIColor.whiteColor()
+            appWindow.makeKeyAndVisible()
+        }
+        application.statusBarHidden = true
         return true
     }
 

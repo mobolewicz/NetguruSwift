@@ -12,14 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.setupLabel()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setupLabel() {
+        let label = UILabel(frame: self.view.frame)
+        label.text = "Do your stuff"
+        label.center = self.view.center
+        self.view.addSubview(label)
     }
-
-
 }
-
